@@ -5,11 +5,25 @@
   list-style: none;
 }
 
-.container ul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container{
+  background-color: rgb(240, 238, 235);
 }
 .container .image{
   width: 100px;
+}
+table{
+
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th{
+  height: 45px;
+}
+
+td{
+  /* text-align: center; */
+}
+table,th,td{
+  border: 1px solid black;
 }
