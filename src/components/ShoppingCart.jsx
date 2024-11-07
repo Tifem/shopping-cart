@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Summer from "../assets/images/summer.jpg";
 import Bluetooth from "../assets/images/bluetooth.jpeg";
 import Headphone from "../assets/images/headphone.jpeg";
 
-const ShoppingCart = () => {
+
   const cartItem = [
     {
       id: 1,
@@ -41,15 +41,30 @@ const ShoppingCart = () => {
       image: Summer,
     },
   ];
+
+
+const ShoppingCart = () => {
+  const [count, setCount] = useState(1);
+
+  const increment = () =>{
+    setCount(count +1)
+  }
+
+  const decrement = () =>{
+    setCount(count -1)
+  }
+
+
+
   return (
     <div className="container">
-      <h1>Shooping Cart</h1>
+      <h1>Shopping Cart</h1>
       <div className="items">
         <table>
           <thead>
             <tr>
               <th>Products</th>
-              <th >Price</th>
+              <th>Price</th>
               <th>Quantity</th>
               <th>Subtotal</th>
             </tr>
@@ -65,13 +80,48 @@ const ShoppingCart = () => {
                   </td>
                   {/* <td>{item.id}</td> */}
                   <td>${item.price.toFixed(2)}</td>
-                  <td>{item.quantity}</td>
-                  <td>{item.price*item.quantity}</td>
+                  <td className="qty">
+                    <button onClick={increment}>+</button>
+                    <span> {count}</span>
+
+                    {
+                      <button onClick={count > 1 ? decrement : undefined}>
+                        -
+                      </button>
+                    }
+                  </td>
+                  <td>{item.price * item.quantity}</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
+        <div className="cart-total">
+          <div>
+            <p>Promotion Code</p>
+            <div>
+              <input type="text" placeholder="Coupon Code" />
+              <button>Apply Coupon</button>
+            </div>
+          </div>
+          <div>
+            <p>Cart Totals</p>
+            <div className="table-cart">
+              <table>
+                <tr>
+
+                <th>Subtotal</th>
+                <td>$281.00</td>
+                </tr>
+                <tr>
+
+                <th>Total</th>
+                <td>$281.00</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
