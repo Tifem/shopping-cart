@@ -3,8 +3,11 @@ import Summer from "../assets/images/summer.jpg";
 import Bluetooth from "../assets/images/bluetooth.jpeg";
 import Headphone from "../assets/images/headphone.jpeg";
 
+const cartItem = [];
 
-  const cartItem = [
+const ShoppingCart = () => {
+  const [count, setCount] = useState(1);
+  const [cart, setCart] = useState([
     {
       id: 1,
       name: "Summer T-shirt",
@@ -40,21 +43,23 @@ import Headphone from "../assets/images/headphone.jpeg";
       quantity: 1,
       image: Summer,
     },
-  ];
+  ]);
 
+  const increment = (id) => {
+    setCart((prevCount) =>
+      prevCount.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
 
-const ShoppingCart = () => {
-  const [count, setCount] = useState(1);
-
-  const increment = () =>{
-    setCount(count +1)
-  }
-
-  const decrement = () =>{
-    setCount(count -1)
-  }
-
-
+  const decrement = (id) => {
+    setCart((prevCount) =>
+      prevCount.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+      )
+    );
+  };
 
   return (
     <div className="container">
@@ -70,7 +75,7 @@ const ShoppingCart = () => {
             </tr>
           </thead>
           <tbody>
-            {cartItem.map((item, index) => {
+            {cart.map((item, index) => {
               return (
                 <tr key={index}>
                   <td className="item-image">
@@ -81,13 +86,16 @@ const ShoppingCart = () => {
                   <td>${item.price.toFixed(2)}</td>
 
                   <td className="qty">
-                    <button onClick={increment}>+</button>
-                    <span> {count}</span>
+                    <button onClick={() => increment (item.id)}>+</button>
+                    <span> {item.quantity}</span>
 
                     {
-                      <button onClick={count > 1 ? decrement : undefined}>
+                      <button onClick={() => decrement (item.id)}>
                         -
                       </button>
+                      // <button onClick={count > 1 ? decrement : undefined}>
+                      //   -
+                      // </button>
                     }
                   </td>
 
@@ -112,13 +120,13 @@ const ShoppingCart = () => {
             <div className="table-cart">
               <table>
                 <tr>
-                <th>Subtotal</th>
-                <td>$281.00</td>
+                  <th>Subtotal</th>
+                  <td>$281.00</td>
                 </tr>
 
                 <tr>
-                <th>Total</th>
-                <td>$281.00</td>
+                  <th>Total</th>
+                  <td>$281.00</td>
                 </tr>
               </table>
             </div>
@@ -126,7 +134,6 @@ const ShoppingCart = () => {
             <button>PROCEED TO CHECKOUT</button>
           </div>
         </div>
-
       </div>
     </div>
   );
