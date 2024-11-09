@@ -62,15 +62,16 @@ td:first-child{
 
 th{
   background-color: green;
-  color: white;
+  color: rgb(249, 242, 242);
 }
-
 
 th:first-child{
   text-align: left;
 }
+
+
 table,th,td{
-  border: 1px solid gray;
+  border: 1px solid rgb(195, 192, 192);
 }
 
 .cart-total{
@@ -81,5 +82,52 @@ table,th,td{
 }
 
 .table-cart table{
-  width: 70%;
+  width: 700px;
+}
+
+.coupon-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.coupon-box input{
+  outline: none;
+  width: 300px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid gray;
+}
+
+.coupon-box button{
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 0 30px;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.cart button{
+ width: fit-content;
+ border: none;
+ background-color: blue;
+ color:white;
+ padding: 14px 40px;
+ border-radius: 1.5rem;
+ font-weight: bold;
+}
+
+.item-image{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 15px;
 }

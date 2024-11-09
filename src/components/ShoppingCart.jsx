@@ -73,13 +73,13 @@ const ShoppingCart = () => {
             {cartItem.map((item, index) => {
               return (
                 <tr key={index}>
-                  <td>
+                  <td className="item-image">
                     {" "}
                     <img src={item.image} alt={item.name} className="image" />
                     <span>{item.name}</span>
                   </td>
-                  {/* <td>{item.id}</td> */}
                   <td>${item.price.toFixed(2)}</td>
+
                   <td className="qty">
                     <button onClick={increment}>+</button>
                     <span> {count}</span>
@@ -90,38 +90,43 @@ const ShoppingCart = () => {
                       </button>
                     }
                   </td>
+
                   <td>{item.price * item.quantity}</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
+
         <div className="cart-total">
           <div>
             <p>Promotion Code</p>
-            <div>
+            <div className="coupon-box">
               <input type="text" placeholder="Coupon Code" />
               <button>Apply Coupon</button>
             </div>
           </div>
-          <div>
+
+          <div className="cart">
             <p>Cart Totals</p>
             <div className="table-cart">
               <table>
                 <tr>
-
                 <th>Subtotal</th>
                 <td>$281.00</td>
                 </tr>
-                <tr>
 
+                <tr>
                 <th>Total</th>
                 <td>$281.00</td>
                 </tr>
               </table>
             </div>
+
+            <button>PROCEED TO CHECKOUT</button>
           </div>
         </div>
+
       </div>
     </div>
   );
