@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  background-color: rgb(240, 238, 235);
+  background-color:aliceblue;
 }
 
 
@@ -61,7 +61,7 @@ td:first-child{
 }
 
 th{
-  background-color: green;
+  background-color: brown;
   color: rgb(249, 242, 242);
 }
 
@@ -99,7 +99,7 @@ table,th,td{
 }
 
 .coupon-box button{
-  background-color: blue;
+  background-color: brown;
   color: white;
   border: none;
   padding: 0 30px;
@@ -118,7 +118,7 @@ table,th,td{
 .cart button{
  width: fit-content;
  border: none;
- background-color: blue;
+ background-color: brown;
  color:white;
  padding: 14px 40px;
  border-radius: 1.5rem;

@@ -61,6 +61,15 @@ const ShoppingCart = () => {
     );
   };
 
+  const calculateSubtotal = () => {
+    return (item.price * item.quantity).toFixed(2);
+  };
+  
+  const total = cart
+    .reduce((total, item) => total + item.price * item.quantity, 0)
+    .toFixed(2);
+
+
   return (
     <div className="container">
       <h1>Shopping Cart</h1>
@@ -121,12 +130,12 @@ const ShoppingCart = () => {
               <table>
                 <tr>
                   <th>Subtotal</th>
-                  <td>$281.00</td>
+                  <td>{total}</td>
                 </tr>
 
                 <tr>
                   <th>Total</th>
-                  <td>$281.00</td>
+                  <td>{total}</td>
                 </tr>
               </table>
             </div>
