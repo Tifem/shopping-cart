@@ -6,7 +6,12 @@
   background-color:aliceblue;
 }
 
-
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 .container h1{
   text-align: center;
@@ -14,13 +19,18 @@
   color: brown;
   padding: 20px;
 }
+
+
 .container .image{
   width: 80px;
 }
 
 
 .items{
-  margin:20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
@@ -77,12 +87,12 @@ table,th,td{
 .cart-total{
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding-top: 30px;
+  gap: 2rem;
 }
 
 .table-cart table{
-  width: 700px;
+  /* width: 700px; */
 }
 
 .coupon-box {
@@ -92,17 +102,17 @@ table,th,td{
 
 .coupon-box input{
   outline: none;
-  width: 300px;
+  width: 100%;
   padding: 8px;
   border-radius: 6px;
   border: 1px solid gray;
 }
 
-.coupon-box button{
+.coupon-box .apply{
   background-color: brown;
   color: white;
   border: none;
-  padding: 0 30px;
+  padding: 5px 20px;
   border-radius: 1rem;
   text-transform: uppercase;
   font-weight: bold;

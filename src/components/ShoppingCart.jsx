@@ -120,7 +120,7 @@ const ShoppingCart = () => {
             <p>Promotion Code</p>
             <div className="coupon-box">
               <input type="text" placeholder="Coupon Code" />
-              <button>Apply Coupon</button>
+              <button className="apply">Apply Coupon</button>
             </div>
           </div>
 
