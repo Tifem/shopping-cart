@@ -140,7 +140,7 @@ const ShoppingCart = () => {
               </table>
             </div>
 
-            <button>PROCEED TO CHECKOUT</button>
+            <button className="checkout">PROCEED TO CHECKOUT</button>
           </div>
         </div>
       </div>

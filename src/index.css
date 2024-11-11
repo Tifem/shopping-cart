@@ -91,9 +91,7 @@ table,th,td{
   gap: 2rem;
 }
 
-.table-cart table{
-  /* width: 700px; */
-}
+
 
 .coupon-box {
   display: flex;
@@ -121,18 +119,16 @@ table,th,td{
 .cart{
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 
-.cart button{
- width: fit-content;
- border: none;
- background-color: brown;
- color:white;
- padding: 14px 40px;
- border-radius: 1.5rem;
- font-weight: bold;
+.checkout{
+  border: none;
+  background: brown;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px
 }
 
 .item-image{
